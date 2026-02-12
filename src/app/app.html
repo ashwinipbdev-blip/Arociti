@@ -1,0 +1,318 @@
+<div class="announcement-bar">
+  Today deal sale off 70%. End in . Hurry Up →
+</div>
+
+<header class="main-header">
+  <div class="header-inner">
+    <div class="mobile-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="search-container desktop-only">
+      <input type="text" placeholder="Search for products">
+      <button class="search-btn">🔍</button>
+    </div>
+
+    <div class="logo">
+      <img src="https://artociti.com/cdn/shop/files/Artociti_Logo_200x.png" alt="Artociti">
+    </div>
+
+    <div class="header-actions">
+      <span class="icon mobile-only">🔍</span>
+      <span class="icon desktop-only"  >
+        <button (click)="goToLogin()">👤</button>
+      </span>
+      <span class="icon heart">🤍 <small>0</small></span>
+      <span class="icon cart">🛒 <small>0</small></span>
+    </div>
+  </div>
+</header>
+
+ <nav class="sub-nav desktop-only">
+    <div class="container">
+      <ul>
+        <li>Store <small>▾</small></li>
+        <li>Best Seller <small>▾</small></li>
+        <li>Blogs <small>▾</small></li>
+        <li class="has-dropdown">
+          Customize Your Art <small>▾</small>
+          <div class="dropdown-content">
+            <p>Customised Murals</p>
+          </div>
+        </li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+  </nav>
+
+<section class="hero-section">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="main-banner">
+        <img src="https://www.artociti.com/cdn/shop/files/Group_1597880619_1_d5371531-3594-4163-9600-f42e0233c980_1600x.png">
+        <!-- <div class="overlay-text">
+          <p>Our Mural Being Gifted to Hon'ble PM Narendra Modi</p>
+          <a href="#">Explore Now</a>
+        </div> -->
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="top-side desktop-only">
+        <img src="https://www.artociti.com/cdn/shop/files/Banner_16_1000x.png">
+      </div>
+      <div class="bottom-side">
+        <div class="half-img"><img src="https://www.artociti.com/cdn/shop/files/Banner_15_600x.png"></div>
+        <div class="half-img"><img src="https://www.artociti.com/cdn/shop/files/Banner_14_600x.png"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="announcement-wrapper">
+  <div class="ticker-text">
+    <span>Today deal sale off 70%. End in . Hurry Up →</span>
+    <span>Today deal sale off 70%. End in . Hurry Up →</span>
+    <span>Today deal sale off 70%. End in . Hurry Up →</span>
+  </div>
+</div>
+
+<div class="review-ticker">
+  <div class="ticker-track">
+    @for (i of [1,2,3]; track i) {
+      <div class="ticker-group">
+        <span>⭐ 4.5/5 Rating</span> <span class="sep">|</span>
+        <span>✅ Verified</span> <span class="sep">|</span>
+        <span>❤️ Customer love us 5/5 based on 118+ Reviews</span> <span class="sep">|</span>
+      </div>
+    }
+  </div>
+</div>
+
+<section class="cat-section">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="title">Categories</h2>
+      <div class="slider-nav">
+        <button class="nav-btn">‹</button>
+        <button class="nav-btn">›</button>
+      </div>
+    </div>
+
+    <div class="cat-grid-wrapper">
+      <div class="cat-scroll-box">
+        @for (cat of categories; track cat.name) {
+          <div class="cat-item">
+            <div class="circle-frame">
+              <img [src]="cat.img" [alt]="cat.name">
+            </div>
+            <p class="cat-label">{{ cat.name }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="scroll-progress-bg">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <div class="best-seller-teaser">
+      <h3>All Time Best Seller</h3>
+      <button class="btn-maroon">View All</button>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="title">All Time Best Seller</h2>
+      <button class="view-all-black">View All</button>
+    </div>
+
+    <div class="product-grid">
+      @for (prod of bestSellers; track prod.title) {
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img [src]="prod.img" [alt]="prod.title">
+            
+            <button class="wishlist-btn">🤍</button>
+            
+            <span class="discount-badge">{{ prod.discount }}</span>
+            
+            <span class="rating-badge">{{ prod.rating }} ★</span>
+          </div>
+
+          <div class="product-info">
+            <h3 class="prod-title">{{ prod.title }}</h3>
+            <div class="price-row">
+              <span class="curr-price">₹{{ prod.price | number:'1.2-2' }}</span>
+              <span class="old-price">₹{{ prod.oldPrice | number:'1.2-2' }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="section-header spacing-top">
+      <h2 class="title">Signature artworks personally curated – Founder's Pick</h2>
+      <button class="view-all-black">View All</button>
+    </div>
+    
+    </div>
+</section>
+
+<section class="collections-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="title">Collections List</h2>
+      <div class="slider-arrows">
+        <button class="arrow-btn">‹</button>
+        <button class="arrow-btn">›</button>
+      </div>
+    </div>
+    
+    <div class="collections-grid">
+      @for (col of collections; track col.name) {
+        <div class="collection-card">
+          <img [src]="col.img" [alt]="col.name">
+          <div class="collection-overlay">
+            <span class="collection-label">{{ col.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="landscape-section">
+  <div class="landscape-bg-overlay">
+    <div class="container">
+      <div class="section-header centered">
+        <h2 class="title">Landscape Canvases</h2>
+        <button class="view-all-black">View All</button>
+      </div>
+
+      <div class="product-grid">
+        @for (prod of landscapeProducts; track prod.title) {
+          <div class="product-card">
+            <div class="image-wrapper">
+              <img [src]="prod.img" [alt]="prod.title">
+              <button class="wishlist-btn">🤍</button>
+              <span class="discount-badge">{{ prod.discount }}</span>
+            </div>
+            <div class="product-info">
+              <h3 class="prod-title">{{ prod.title }}</h3>
+              <div class="price-row">
+                <span class="curr-price">₹{{ prod.price | number }}</span>
+                <span class="old-price">₹{{ prod.oldPrice | number }}</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fixed-actions">
+  <button class="action-btn video-call"><span class="icon">📹</span></button>
+  <button class="action-btn whatsapp"><span class="icon">💬</span></button>
+  <button class="action-btn cart-float">
+    <span class="icon">🛍️</span>
+    <span class="float-badge">0</span>
+  </button>
+</div>
+<section class="featured-collections-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="title">Shop by Collections</h2>
+      <button class="view-all-link">Explore All Collections →</button>
+    </div>
+
+    <div class="collections-grid-layout">
+      @for (item of featuredCollections; track item.name) {
+        <div class="featured-card">
+          <div class="img-container">
+            <img [src]="item.img" [alt]="item.name">
+            <div class="card-overlay">
+              <div class="overlay-content">
+                <h3>{{ item.name }}</h3>
+                <span>{{ item.items }}</span>
+              </div>
+              <div class="arrow-circle">→</div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+@if (isLoginModalOpen) {
+  <div class="modal-overlay" (click)="closeLogin()">
+    <div class="login-modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeLogin()">×</button>
+      
+      <div class="login-content">
+        <h2>Login</h2>
+        <p>Please enter your e-mail and password:</p>
+        
+        <form class="login-form">
+          <div class="input-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Password" required>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+          
+          <button type="submit" class="btn-login">LOGIN</button>
+        </form>
+
+        <div class="login-footer">
+         <button (click)="openSignUp()" >Don't have an account? <a href="#">Create one</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+
+@if (isSignUpModalOpen) {
+  <div class="modal-overlay" (click)="closeLogin()">
+    <div class="login-modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeLogin()">×</button>
+      
+      <div class="login-content">
+        <h2>Register</h2>
+        
+        <form class="login-form" [formGroup]="registerForm">
+          <div class="input-group">
+            <input type="firstname" placeholder="FirstName" required  formControlName="firstname" >
+          </div>
+          <div class="input-group">
+            <input type="lastname" placeholder="LastName" required formControlName="lastname" >
+          </div>
+          
+          <div class="input-group" >
+            <input type="email" placeholder="email" required  formControlName="email" >
+          </div>
+
+          <div class="input-group" >
+            <input type="phone" placeholder="phone" required formControlName="phone" >
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="password" required formControlName="password">
+          </div>
+          <button type="submit" class="btn-login" (click)="register()" >Register</button>
+        </form>
+
+        <div class="login-footer">
+          
+         <button (click)="goToLogin()" > <p>Already have an account?<a href="#"> Login here</a></p></button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
